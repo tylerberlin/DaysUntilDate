@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+    output: 'export',
+    distDir: 'out',
+    images: {
+        unoptimized: true,
+    },
+    basePath: process.env.NODE_ENV === 'production' ? '/DaysUntilDate' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/DaysUntilDate/' : '',
+}
 
-export default nextConfig;
+export default nextConfig
